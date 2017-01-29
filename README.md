@@ -5,7 +5,7 @@
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Clone the repo:
 
 ```ruby
 git clone git@github.com:tarunjadhwani/blackjack.git
