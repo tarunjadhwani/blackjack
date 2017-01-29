@@ -17,12 +17,4 @@ class Player < Blackjacker
       get_input
     end
   end
-
-  def hit type = "player"
-    player.push deal_one_card
-    formatted_dealer = format_cards dealer
-    formatted_player = format_cards player
-    print_cards formatted_dealer, formatted_player
-    deal_cards dealer, player
-  end
 end

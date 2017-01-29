@@ -56,38 +56,34 @@ class Game
 
     def hit type = "player"
       if type == "player"
-        @player.cards.push deal_one_card
+        @player.cards << deal_one_card
         print_cards
         deal_cards
       elsif type == "dealer"
-        @dealer.cards.push deal_one_card
+        @dealer.cards << deal_one_card
         stand
       end
     end
 
     def stand
-      formatted_dealer = format_cards @dealer.cards
-      formatted_player = format_cards @player.cards
-      player_score = @player.score
-      dealer_score = @dealer.score
-      if dealer.score > 21
+      if @dealer.score > 21
         print_cards true
         print_scores
         puts "Dealer loss (BUSTED)"
         exit
-      elsif dealer_score <= 17
+      elsif @dealer.score <= 17
         hit "dealer"
-      elsif dealer_score > player_score
+      elsif @dealer.score > @player.score
         print_cards true
         print_scores
         puts "Dealer won"
         exit
-      elsif dealer_score < player_score
+      elsif @dealer.score < @player.score
         print_cards true
         print_scores
         puts "Player won"
         exit
-      elsif dealer_score == player_score
+      elsif @dealer.score == @player.score
         print_cards true
         print_scores 
         puts "Draw"
@@ -96,7 +92,6 @@ class Game
     end
 
     def deal_cards
-      puts @player.cards.first.score
       if @player.score > 21
         puts "Player loss (BUSTED)"
         exit
