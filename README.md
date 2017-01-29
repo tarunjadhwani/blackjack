@@ -1,7 +1,4 @@
-# Blackjek
-
-[![Build Status](https://travis-ci.org/alienware/blackjek.svg?branch=master)](https://travis-ci.org/alienware/blackjek)
-[![Code Climate](https://codeclimate.com/github/alienware/blackjek/badges/gpa.svg)](https://codeclimate.com/github/alienware/blackjek)
+# Blackjack
 
 ## Installation
 
