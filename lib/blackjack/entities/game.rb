@@ -9,7 +9,8 @@ class Game
     @player = Player.new
     @dealer = Dealer.new
     @deck = Deck.new
-    @deck_cards = @deck.cards
+    @initial_decks = @deck.cards*4
+    @deck_cards = @initial_decks.shuffle!
   end
 
   def start
