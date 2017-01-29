@@ -21,7 +21,8 @@ class Game
 
   private
     def deal_one_card
-      @deck_cards.sample
+      card = @deck_cards.sample
+      @deck_cards.delete(card)
     end
 
     def format_cards cards
