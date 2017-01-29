@@ -1,41 +1,74 @@
-# Blackjack
+# Blackjek
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/blackjack`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+[![Build Status](https://travis-ci.org/alienware/blackjek.svg?branch=master)](https://travis-ci.org/alienware/blackjek)
+[![Code Climate](https://codeclimate.com/github/alienware/blackjek/badges/gpa.svg)](https://codeclimate.com/github/alienware/blackjek)
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'blackjack'
+git clone git@github.com:tarunjadhwani/blackjack.git
 ```
 
 And then execute:
+```
+$ cd blackjack
+$ bundle
+```
+## To play run
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install blackjack
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/blackjack. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+    $ bin/console
 
 
-## License
+Number of decks are 4.
 
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+## From the RubyConf India 2017 Contest
 
+## BlackJack
+
+#### Problem Statement:
+
+Blackjack is a popular card game played against a Dealer. In this card game the Player is trying to beat the Dealer.
+
+##### Deck:
+
+The game is played with 4 or more decks containing 52 distinct cards in each (Face values : A, 2-9, J, Q and K; Suits : D,C,S,H)
+The entire deck is shuffled before the start of the game.
+
+##### Beginning:
+
+Player and Dealer are initially dealt 2 cards each. Only one of the Dealer's cards is visible to the Player, the other is hidden. All the cards of the Player are visible to everyone at all times.
+
+##### Turns:
+
+Player plays first, followed by the Dealer.
+
+##### Player's Turn:
+
+The Player could then choose to HIT (ask for another card) or STAND (no more cards).
+
+If the Player chooses to HIT and total score crosses 21 they get busted.
+
+The Player's option to choose continues till they get busted, or they choose to STAND or they obtain a score of 21 (also known as Blackjack).
+
+
+##### Dealer's Turn:
+
+When the Player completes their turn and the Player is not Busted, the Dealer then has to
+
+* HIT themself if their score is less than <=17 until they reach a score >17
+* STAND if their score >17
+
+##### Scoring:
+
+Face cards (Jacks, Queens and Kings) are worth 10 points. Aces are worth 1 or 11, whichever is preferable. The other cards are worth their number.
+A person's score is the sum of the values of the cards in their hand.
+
+##### Ending:
+
+The Player is busted. The Dealer wins.
+The Dealer is busted. The Player wins.
+Both the Player and Dealer obtain a BlackJack. The game is a draw.
+In other cases, the person with a score closer to 21 wins.
+When both Player and Dealer have the same score, the game is a draw.
